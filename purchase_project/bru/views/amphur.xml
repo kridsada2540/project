@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="amphur_tree_view">
+            <field name="name">amphur</field>
+            <field name="model">amphur</field>
+            <field name="arch" type="xml">
+                <tree string="Amphur Tree">
+                    <field name="name"/>
+                    <field name="name_eng"/>
+                    <field name="province_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_amphur" model="ir.actions.act_window">
+            <field name="name">Amphur</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">amphur</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_amphur" sequence="2"
+                  parent="menu_address" action="action_amphur"/>
+
+    </data>
+</odoo>

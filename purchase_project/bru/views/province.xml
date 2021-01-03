@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="province_tree_view">
+            <field name="name">province</field>
+            <field name="model">province</field>
+            <field name="arch" type="xml">
+                <tree string="Province Tree">
+                    <field name="name"/>
+                    <field name="name_eng"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_province" model="ir.actions.act_window">
+            <field name="name">Province</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">province</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_province" sequence="3"
+                  parent="menu_address" action="action_province"/>
+
+    </data>
+</odoo>

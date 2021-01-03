@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="tambon_tree_view">
+            <field name="name">tambon</field>
+            <field name="model">tambon</field>
+            <field name="arch" type="xml">
+                <tree string="Tambon Tree">
+                    <field name="name"/>
+                    <field name="name_eng"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_tambon" model="ir.actions.act_window">
+            <field name="name">Tambon</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">tambon</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_tambon" sequence="1"
+                  parent="menu_address" action="action_tambon"/>
+    </data>
+</odoo>

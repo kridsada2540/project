@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="officer_form_view">
+            <field name="name">bru.officer</field>
+            <field name="model">bru.officer</field>
+            <field name="arch" type="xml">
+                <form string="BRU Officer Form">
+                    <sheet>
+                        <h2>
+                            กรอกข้อมูลหน่วยงาน
+                        </h2>
+                        <group>
+                                <field name="image"
+                                       widget="image"
+                                       class="oe_avatar"
+                                       options="{&quot;preview_image&quot;: &quot;image_medium&quot;, &quot;size&quot;: [90, 90]}"/>
+                            <group>
+                                <field name="number_id"/>
+                                <field name="position"/>
+                                <field name="name_sur"/>
+                                <field name="faculty_ids"/>
+                                <field name="faculty_branch"/>
+                                <field name="affiliation_id"/>
+                                <field name="affiliation"/>
+
+                            </group>
+                            <group>
+                                <field name="organization_id"/>
+                                <field name="organization"/>
+                                <field name="phone"/>
+                                <field name="email"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <record model="ir.ui.view" id="officer_tree_view">
+            <field name="name">bru.officer</field>
+            <field name="model">bru.officer</field>
+            <field name="arch" type="xml">
+                <tree string="Bru officer Tree">
+                    <field name="position"/>
+                    <field name="number_id"/>
+                    <field name="name_sur"/>
+                    <field name="position"/>
+                    <field name="affiliation"/>
+                    <field name="position"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="action_officer" model="ir.actions.act_window">
+            <field name="name">Officer</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">bru.officer</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_officer" sequence="1"
+                  parent="menu_officer_id" action="action_officer"/>
+    </data>
+</odoo>
